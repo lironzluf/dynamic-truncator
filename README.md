@@ -6,6 +6,12 @@ A Lightweight cross-browser helper library that enables you to truncate by the d
 
 # Example
 
+```js
+// element is the HTMLDOMElement
+// text (string) is optional and taken from the element if not supplied
+var dynamicTruncator = DynamicTruncator(element,text);
+```
+
 # Install
 
 ```js
