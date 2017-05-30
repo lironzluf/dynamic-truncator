@@ -1,6 +1,6 @@
 {
   "name": "dynamic-truncator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Lightweight cross-browser helper library that enables you to truncate by the dimensions of a given element ",
   "main": "index.js",
   "scripts": {
