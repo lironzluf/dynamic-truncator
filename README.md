@@ -1,5 +1,7 @@
 # Dynamic Truncator
 
+[![Build Status](https://travis-ci.org/lironzluf/dynamic-truncator.svg?branch=master)](https://travis-ci.org/lironzluf/dynamic-truncator)
+
 A Lightweight cross-browser helper library that enables you to truncate by the dimensions of a given element.
 
 # Example
