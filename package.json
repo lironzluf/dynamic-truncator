@@ -1,0 +1,25 @@
+{
+  "name": "dynamic-truncator",
+  "version": "1.0.0",
+  "description": "Lightweight cross-browser helper library that enables you to truncate by the dimensions of a given element ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lironzluf/dynamic-truncator.git"
+  },
+  "keywords": [
+    "javascript",
+    "truncate",
+    "truncator",
+    "dynamic"
+  ],
+  "author": "Liron Zluf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lironzluf/dynamic-truncator/issues"
+  },
+  "homepage": "https://github.com/lironzluf/dynamic-truncator#readme"
+}
