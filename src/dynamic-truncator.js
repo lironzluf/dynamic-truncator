@@ -28,7 +28,7 @@
 
   window['DynamicTruncator'] = class {
 
-    constructor(element, text){
+    constructor(element, text) {
       this._element = element;
       this._text = text;
       this.words = [];
@@ -45,7 +45,7 @@
         }
       }
 
-      // Set height 100% to element to prevent ie bug
+      // Set height 100% to element to prevent IE bug
       this.setHeightOnElement(100);
       this.words = this.getWordsFromText();
 
@@ -54,13 +54,13 @@
       }
     }
 
-    startTruncating(){
+    startTruncating() {
       //get max height of text element
       var height = this.getMaxHeight();
       // clear text in element
       this._element.innerText = '';
-      // foreach word in rec add word to element and check for overflow, if overflown - add 3 dots and stop
-      for (var i = 0; i < this.words.length; i+=1) {
+      // add each word in the words array to the element and check for overflow, if overflown - add ellipsis and stop
+      for (var i = 0; i < this.words.length; i += 1) {
         this._element.innerText = this._element.innerText + ' ' + this.words[i];
         // if dots added, break
         if (this.addElipsis(i, height)) {
@@ -69,16 +69,16 @@
       }
     }
 
-    addElipsis(i, height){
+    addElipsis(i, height) {
       // if text element is now overflown add elipsis
       if (this._element.scrollHeight > height && this._element.innerText.length > 0) {
         this._element.innerText = this._element.innerText.substring(0, this._element.innerText.length - this.words[i].length - 1); // remove last word
         // replace special chars at the end of the word and replace them with three dots
         this._element.innerText = this._element.innerText.substring(0, this._element.innerText.length - 1) + this._element.innerText[this._element.innerText.length - 1].replace(/(_|\+|\.|\/|\\|\,|\:|\;|\-)/g, '');
         this._element.innerText += '...';
-        if (this._element.scrollHeight > height){ // if elipsis added caused overflow
-          this._element.innerText = this._element.innerText.substring(0, this._element.innerText.length -3); // remove dots
-          this._element.innerText = this._element.innerText.substring(0, this._element.innerText.length - this.words[i-1].length - 1); // remove last word
+        if (this._element.scrollHeight > height) { // if ellipsis added caused overflow
+          this._element.innerText = this._element.innerText.substring(0, this._element.innerText.length - 3); // remove ellipsis
+          this._element.innerText = this._element.innerText.substring(0, this._element.innerText.length - this.words[i - 1].length - 1); // remove last word
           this._element.innerText = this._element.innerText.substring(0, this._element.innerText.length - 1) + this._element.innerText[this._element.innerText.length - 1].replace(/(_|\+|\.|\/|\\|\,|\:|\;|\-)/g, '');
           this._element.innerText += '...';
         }
@@ -88,23 +88,23 @@
       return false;
     }
 
-    isTruncationNeeded(){
+    isTruncationNeeded() {
       return this._element.scrollHeight > this._element.clientHeight;
     }
 
-    isTextValid(){
+    isTextValid() {
       return (typeof this._text === 'string' && this._text.length > 0);
     }
 
-    getMaxHeight(){
+    getMaxHeight() {
       let computedStyle = window.getComputedStyle(this._element, null),
         maxHeightComputedStyle = 0, heightComputedStyle = 0;
       if (computedStyle) {
-        maxHeightComputedStyle = parseInt(computedStyle.maxHeight,10);
-        heightComputedStyle = parseInt(computedStyle.height,10);
+        maxHeightComputedStyle = parseInt(computedStyle.maxHeight, 10);
+        heightComputedStyle = parseInt(computedStyle.height, 10);
       }
 
-      return Math.max(maxHeightComputedStyle,heightComputedStyle,this._element.clientHeight);
+      return Math.max(maxHeightComputedStyle, heightComputedStyle, this._element.clientHeight);
     }
 
     getTextFromElement() {
@@ -117,7 +117,7 @@
       }
     }
 
-    getWordsFromText(){
+    getWordsFromText() {
       return this._text.split(' ');
     }
   };
