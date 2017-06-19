@@ -2,9 +2,11 @@
   "name": "dynamic-truncator",
   "version": "1.0.4",
   "description": "A Lightweight cross-browser helper library that enables you to truncate text by the dimensions of a given element.",
-  "main": "index.js",
+  "main": "./lib/dynamic-truncator.min.js",
   "scripts": {
-    "start": "gulp"
+    "build": "webpack --env build",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "prepublish": "webpack --env build"
   },
   "repository": {
     "type": "git",
@@ -23,11 +25,18 @@
   },
   "homepage": "https://github.com/lironzluf/dynamic-truncator#readme",
   "devDependencies": {
-    "babel-preset-es2015": "^6.24.1",
-    "eslint": "^3.19.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-eslint": "^3.0.1",
-    "gulp-uglify": "^2.1.2"
-  }
+    "babel-cli": "6.24.1",
+    "babel-core": "6.24.1",
+    "babel-eslint": "7.2.3",
+    "babel-loader": "7.0.0",
+    "babel-plugin-add-module-exports": "0.2.1",
+    "babel-preset-es2015": "6.24.1",
+    "eslint": "3.19.0",
+    "eslint-loader": "1.7.1",
+    "webpack": "2.4.1",
+    "yargs": "7.1.0"
+  },
+  "files": [
+    "lib"
+  ]
 }
